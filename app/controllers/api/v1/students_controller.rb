@@ -9,6 +9,12 @@ class Api::V1::StudentsController < ApplicationController
     render json: student
   end
 
+  def destroy
+    student = Student.find(params[:id])
+    student.destroy
+    render json: student
+  end
+
   private
 
   def student_params
