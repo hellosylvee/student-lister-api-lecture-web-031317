@@ -1,7 +1,7 @@
 class Api::V1::StudentsController < ApplicationController
+  before_action :authorize_account!
 
   def index
-    puts request.headers['Authorization']
     students = Student.all
     render json: students
   end
