@@ -1,6 +1,4 @@
 class Api::V1::StudentsController < ApplicationController
-  before_action :authorize_account!
-
   def index
     students = Student.all
     render json: students
