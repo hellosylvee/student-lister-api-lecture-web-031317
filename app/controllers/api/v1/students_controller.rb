@@ -1,6 +1,7 @@
 class Api::V1::StudentsController < ApplicationController
 
   def index
+    puts request.headers['Authorization']
     students = Student.all
     render json: students
   end
